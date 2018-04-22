@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422181545) do
+ActiveRecord::Schema.define(version: 20180422182953) do
 
   create_table "spots", force: :cascade do |t|
     t.integer "address_number"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180422181545) do
     t.string "buffer"
     t.integer "ward_low"
     t.integer "ward_high"
+    t.string "street_type"
   end
 
 end
