@@ -18,6 +18,9 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='ui text container'>
+          <ZoneSearch
+            
+          />
           <ZoneList
             zones={address}
           />
