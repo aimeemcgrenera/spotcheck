@@ -7,7 +7,24 @@ class App extends Component {
     zones: [],
   }
 
-  
+  addStreet = (street) => {
+    const newAddress = this.state.zones.concat(street);
+    this.setState({ zones: newAddress });
+  }
+
+  render() {
+    const { address } = this.state;
+
+    return (
+      <div className='App'>
+        <div className='ui text container'>
+          <ZoneList
+            zones={address}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
