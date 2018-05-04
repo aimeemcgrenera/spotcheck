@@ -6,7 +6,7 @@ const ZoneList = (zones) => {
       return (
         <div className="col-lg-12">
           <div className="col-lg-6 col-lg-offset-3 well">
-
+          
           </div>
         </div>
       )

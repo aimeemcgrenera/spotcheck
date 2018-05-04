@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import SelectedStreet from './SelectedStreet';
+import ZoneSearch from './ZoneSearch';
 import ZoneList from './ZoneList';
 
 class App extends Component {
