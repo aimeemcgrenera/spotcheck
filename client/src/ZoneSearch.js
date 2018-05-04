@@ -22,7 +22,6 @@ class ZoneSearch extends React.Component {
 
     }
 
-  }
 }
 
-export default FoodSearch;
+export default ZoneSearch;
