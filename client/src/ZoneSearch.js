@@ -11,8 +11,14 @@ class ZoneSearch extends React.Component {
     const value = e.target.value;
 
     this.setState({
-      searchValue: value.
+      searchValue: value,
     });
+
+    Client.search(value, (zones) => {
+      this.setState({
+        zones: zones
+      })
+    })
 
     }
 
