@@ -5,5 +5,9 @@ function search(query) {
     .then(parseJSON);
 }
 
+function parseJSON(response) {
+  return response.json();
+}
+
 const Client = { search };
 export default Client;
