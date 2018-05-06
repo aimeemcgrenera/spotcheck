@@ -22,6 +22,12 @@ class ZoneSearch extends React.Component {
 
     }
 
+  render(){
+    const zoneRows = zones.map((zone, id) => (
+      
+    ))
+  }
+
 }
 
 export default ZoneSearch;
