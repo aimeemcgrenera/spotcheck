@@ -18,8 +18,6 @@ class ZoneSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-
-    alert(this.state.value)
     const value = this.state.value
 
     this.setState({

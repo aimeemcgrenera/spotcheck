@@ -2,9 +2,10 @@ import fetch from 'isomorphic-fetch';
 
 function search(query) {
   return fetch(`api/zone?street_name=${query}`, {
+    method: 'GET',
     accept: 'application/json',
-  }).then(checkStatus)
-    .then(parseJSON)
+  }).then(checkStatus) //.then(results => results.json())
+    .then(parseJSON)  //.then(results => console.log(results))
 }
 
 function checkStatus(response) {
@@ -14,7 +15,7 @@ function checkStatus(response) {
   const error = new Error(`HTTP Error ${response.statusText}`);
   error.status = response.statusText;
   error.response = response;
-  console.log(error); // eslint-disable-line no-console
+  console.log(error);
   throw error;
 }
 
