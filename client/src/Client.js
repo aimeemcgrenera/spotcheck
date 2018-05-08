@@ -1,8 +1,10 @@
+import fetch from 'isomorphic-fetch';
+
 function search(query) {
   return fetch(`api/zone?street_name=${query}`, {
     accept: 'application/json',
   }).then(checkStatus)
-    .then(parseJSON);
+    .then(parseJSON)
 }
 
 function checkStatus(response) {

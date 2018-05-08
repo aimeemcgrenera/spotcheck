@@ -1,23 +1,15 @@
 import React from 'react';
 
-const ZoneList = (zones) => {
-  function listZones() {
-    return zones.map(zone => {
-      return (
-        <div className="col-lg-12">
-          <div className="col-lg-6 col-lg-offset-3 well">
-          
-          </div>
-        </div>
-      )
-    })
-  }
+export default function ZoneList(props) {
+  const zones = props;
+
+  const zoneRows = zones.map((zone, id) => (
+      <td>{zone.street_name}</td>
+    ))
 
   return(
     <div>
-      {listZones()}
+      {zoneRows}
     </div>
   )
 }
-
-export default ZoneList

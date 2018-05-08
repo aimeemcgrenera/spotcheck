@@ -8,26 +8,46 @@ class ZoneSearch extends React.Component {
   };
 
   handleSearchChange(e){
-    const value = e.target.value;
+    const value = e.search.value;
 
     this.setState({
       searchValue: value,
+      zones: [],
     });
 
-    Client.search(value, (zones) => {
+    if (value === ''){
       this.setState({
-        zones: zones
-      })
-    })
-
+        zones:[],
+      });
     }
 
-  render(){
-    const zoneRows = zones.map((zone, id) => (
-      
-    ))
+    Client.search(value => {
+      this.setState({
+        zones: value.slice()
+      })
+    })
   }
 
+    render(){
+      const zoneRows = this.state.zones.map((zone) => (
+        <td>{zone.street_name}</td>
+      ))
+
+      return(
+        <div id='zone-search'>
+          <input
+            className='prompt'
+            type='text'
+            placeholder='Search zones...'
+            value={this.state.searchValue}
+            onChange={this.handleSearchChange}
+          />
+          <tbody>
+            {zoneRows}
+          </tbody>
+        </div>
+      )
+  }
 }
 
 export default ZoneSearch;
