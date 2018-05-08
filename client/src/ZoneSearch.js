@@ -24,6 +24,7 @@ class ZoneSearch extends React.Component {
         zones: value
       })
     })
+    debugger
   }
 
     render(){
@@ -43,7 +44,11 @@ class ZoneSearch extends React.Component {
       return(
         <div id='zone-search'>
           <form onSubmit={this.handleSearch} >
-            <input type="text" placeholder="Search Zones..." ></input>
+            <input
+            type="text"
+            placeholder="Search Zones..."
+            value={this.value}
+            />
             <input type="submit" value="Search" ></input>
           </form>
           {zoneRows}
