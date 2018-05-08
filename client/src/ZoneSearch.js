@@ -29,14 +29,16 @@ class ZoneSearch extends React.Component {
 
     render(){
       const zoneRows = this.state.zones.map((zone) => (
-        <td>{zone.status}</td>
-        <td>{zone.zone}</td>
-        <td>{zone.odd_even}</td>
-        <td>{zone.address_range_low}</td>
-        <td>{zone.address_range_high}</td>
-        <td>{zone.street_direction}</td>
-        <td>{zone.street_name}</td>
-        <td>{zone.street_type}</td>
+        <tr>
+          <td>{zone.status}</td>
+          <td>{zone.zone}</td>
+          <td>{zone.odd_even}</td>
+          <td>{zone.address_range_low}</td>
+          <td>{zone.address_range_high}</td>
+          <td>{zone.street_direction}</td>
+          <td>{zone.street_name}</td>
+          <td>{zone.street_type}</td>
+        </tr>
       ))
 
       return(
