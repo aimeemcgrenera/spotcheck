@@ -2,9 +2,10 @@ import React from 'react';
 import Client from './Client';
 
 class ZoneSearch extends React.Component {
-  state = {
-    zones: [],
-    searchValue: '',
+  constructor(props) {
+    state = {
+      zones: [],
+      searchValue: '',
   };
 
   handleSearchChange(e){
