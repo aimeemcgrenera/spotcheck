@@ -2,15 +2,27 @@ import React from 'react';
 import Client from './Client';
 
 class ZoneSearch extends React.Component {
-    state = {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
       zones: [],
-      searchValue: '',
     };
 
-  handleSearch = (e) => {
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSearch.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({value: e.target.value});
+  }
+
+  handleSearch(e){
+    e.preventDefault()
+
     const value = e.target.value;
     this.setState({
-      searchValue: value,
+      value: value,
     });
 
     if (value === ''){
@@ -47,7 +59,8 @@ class ZoneSearch extends React.Component {
             <input
             type="text"
             placeholder="Search Zones..."
-            value={this.value}
+            value={this.state.value}
+            onChange={this.handleChange}
             />
             <input type="submit" value="Search" ></input>
           </form>
