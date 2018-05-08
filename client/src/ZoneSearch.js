@@ -8,11 +8,10 @@ class ZoneSearch extends React.Component {
   };
 
   handleSearchChange(e){
-    const value = e.search.value;
+    const value = e.target.value;
 
     this.setState({
       searchValue: value,
-      zones: [],
     });
 
     if (value === ''){
@@ -30,13 +29,19 @@ class ZoneSearch extends React.Component {
 
     render(){
       const zoneRows = this.state.zones.map((zone) => (
+        <td>{zone.status}</td>
+        <td>{zone.zone}</td>
+        <td>{zone.odd_even}</td>
+        <td>{zone.address_range_low}</td>
+        <td>{zone.address_range_high}</td>
+        <td>{zone.street_direction}</td>
         <td>{zone.street_name}</td>
+        <td>{zone.street_type}</td>
       ))
 
       return(
         <div id='zone-search'>
           <input
-            className='prompt'
             type='text'
             placeholder='Search zones...'
             value={this.state.searchValue}

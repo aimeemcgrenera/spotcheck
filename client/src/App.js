@@ -21,9 +21,6 @@ class App extends Component {
           <ZoneSearch
 
           />
-          <ZoneList
-            zones={address}
-          />
         </div>
       </div>
     );
