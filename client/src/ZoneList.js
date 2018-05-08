@@ -2,7 +2,7 @@
 //
 // export default function ZoneList(props) {
 //   const zones = props;
-//
+//   debugger
 //   const zoneRows = zones.map((zone, id) => (
 //       <td>{zone.street_name}</td>
 //     ))

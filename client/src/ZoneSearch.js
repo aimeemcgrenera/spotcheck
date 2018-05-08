@@ -2,15 +2,13 @@ import React from 'react';
 import Client from './Client';
 
 class ZoneSearch extends React.Component {
-  constructor(props) {
     state = {
       zones: [],
       searchValue: '',
-  };
+    };
 
-  handleSearchChange(e){
+  handleSearch = (e) => {
     const value = e.target.value;
-
     this.setState({
       searchValue: value,
     });
@@ -23,7 +21,7 @@ class ZoneSearch extends React.Component {
 
     Client.search(value => {
       this.setState({
-        zones: value.slice()
+        zones: value
       })
     })
   }
@@ -44,15 +42,11 @@ class ZoneSearch extends React.Component {
 
       return(
         <div id='zone-search'>
-          <input
-            type='text'
-            placeholder='Search zones...'
-            value={this.state.searchValue}
-            onChange={this.handleSearchChange}
-          />
-          <tbody>
-            {zoneRows}
-          </tbody>
+          <form onSubmit={this.handleSearch} >
+            <input type="text" placeholder="Search Zones..." ></input>
+            <input type="submit" value="Search" ></input>
+          </form>
+          {zoneRows}
         </div>
       )
   }
