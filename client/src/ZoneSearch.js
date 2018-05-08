@@ -45,7 +45,7 @@ render(){
           />
           <input type="submit" value="Search" ></input>
         </form>
-          {this.state.zones}
+
         </div>
       )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ZoneSearch from './ZoneSearch';
-// import ZoneList from './ZoneList';
+import ZoneList from './ZoneList';
 
 class App extends Component {
 
@@ -10,9 +10,9 @@ class App extends Component {
       <div className='App'>
         <div className='ui text container'>
           <ZoneSearch
-
           />
-
+          <ZoneList
+          />
         </div>
       </div>
     );
