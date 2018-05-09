@@ -5,10 +5,10 @@ class ZoneSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      even_odd = '',
-      direction = '',
-      street = '',
-      type = '',
+      even_odd: '',
+      direction: '',
+      street: '',
+      type: '',
       zones: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -21,17 +21,20 @@ class ZoneSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    const value = this.state.value
+
+    var even_odd = document.getElementById('number').value;
+    var direction = document.getElementById('direction').value;
+    var street = document.getElementById('street').value;
+    var type = document.getElementById('type').value;
 
     this.setState({
-      value: value,
+      even_odd: even_odd,
+      direction: direction,
+      street: street,
+      type: type,
     });
 
-    Client.search(value, (zones) => {
-      this.setState({
-        zones: zones
-      })
-    });
+    Client.search(even_odd, direction, street, type)
   }
 
 render(){
