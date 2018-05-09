@@ -5,10 +5,10 @@ class SpotForm extends React.Component {
   handleClick(event){
     event.preventDefault();
 
-    var number = this.refs.number.value
-    var direction = this.refs.direction.value
-    var street = this.refs.street.value
-    var type = this.refs.type.value
+    var number = document.getElementById('number').value;
+    var direction = document.getElementById('direction').value;
+    var street = document.getElementById('street').value;
+    var type = document.getElementById('type').value;
 
     fetch(`api/spot`, {
       method: 'POST',
@@ -27,25 +27,26 @@ class SpotForm extends React.Component {
         <form onSubmit={this.handleSubmit} >
           <input
             type="text"
-            ref="number"
+            id="number"
             placeholder="Enter Address Number"
           />
           <input
             type="text"
-            ref="direction"
+            id="direction"
             placeholder="Enter Street Direction"
           />
           <input
             type="text"
-            ref="street"
+            id="street"
             placeholder="Enter Street Name"
           />
           <input
             type="text"
-            ref="type"
+            id="type"
             placeholder="Enter Street Type"
           />
           <button onClick={this.handleClick}>Submit</button>
+
           </form>
 
           </div>

@@ -5,7 +5,10 @@ class ZoneSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      even_odd = '',
+      direction = '',
+      street = '',
+      type = '',
       zones: []
     };
     this.handleChange = this.handleChange.bind(this);
@@ -37,11 +40,25 @@ render(){
       <form onSubmit={this.handleSubmit} >
         <input
           type="text"
-          placeholder="Search Zones..."
-          value={this.state.value}
-          onChange={this.handleChange}
-          />
-          <input type="submit" value="Search" ></input>
+          id="number"
+          placeholder="Enter Address Number"
+        />
+        <input
+          type="text"
+          id="direction"
+          placeholder="Enter Street Direction"
+        />
+        <input
+          type="text"
+          id="street"
+          placeholder="Enter Street Name"
+        />
+        <input
+          type="text"
+          id="type"
+          placeholder="Enter Street Type"
+        />
+        <button onClick={this.handleClick}>Submit</button>
         </form>
 
         </div>
