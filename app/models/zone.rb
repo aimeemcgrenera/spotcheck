@@ -1,4 +1,4 @@
-class Zone < ApplicationRecord
+class Zone < ActiveRecord::Base
   def self.getData(odd_even, street_direction, street_name, street_type)
     resp = Faraday.get 'https://data.cityofchicago.org/resource/ys7w-i4tk.json' do |req|
       req.params['odd_even'] = odd_even

@@ -5,7 +5,10 @@ function search(odd_even, direction, street, type) {
     method: 'GET',
     accept: 'application/json',
   }).then(checkStatus) //.then(results => results.json())
-    .then(parseJSON)  //.then(results => console.log(results))
+    .then(parseJSON)
+    .then((data) => {
+      console.log('Check this JSON!', data);
+    }).catch(err => {throw err})
 }
 
 function checkStatus(response) {
@@ -20,7 +23,7 @@ function checkStatus(response) {
 }
 
 function parseJSON(response) {
-  return response.json();
+  response.json();
 }
 
 const Client = { search };
