@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ZoneSearch from './ZoneSearch';
 // import ZoneList from './ZoneList';
+import SpotForm from './SpotForm';
 
 class App extends Component {
 
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='ui text container'>
+          <SpotForm />
           <ZoneSearch
           />
 
