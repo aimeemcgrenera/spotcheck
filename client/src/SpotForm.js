@@ -10,13 +10,12 @@ class SpotForm extends React.Component {
     $.ajax({
       url: '/api/spot',
       type: "POST",
-      data: {spot: {}}
-    })
+      data: {spot: {address_number: number, street_direction: direction, street_name :street, street_type: type}},
+      success: response => {
+        console.log("it worked!", response);
+      }
+    });
   }
-
-
-
-
 
   render(){
     return(
@@ -49,5 +48,5 @@ class SpotForm extends React.Component {
         )
     }
 }
-(:address_number, :street_direction, :street_name, :street_type)
+
 export default SpotForm;
