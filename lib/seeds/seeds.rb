@@ -17,7 +17,7 @@ csv.each do |row|
   t.buffer = row['buffer']
   t.ward_low = row['ward_low']
   t.ward_low = row['ward_high']
-  t.save
+  t.save!
   puts "\n#{lineno} zone entries imported."
 end
 
