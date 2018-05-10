@@ -1,5 +1,4 @@
 class SpotsController < ApplicationController
-  before_action :set_spot, only: [:show, :update, :destroy]
 
   def index
     @spots = Spot.all
@@ -29,12 +28,8 @@ class SpotsController < ApplicationController
 
   private
 
-    def set_spot
-      @spot = Spot.find(params[:id])
-    end
-
     def spot_params
-      params.require(:spot).permit(:address_number, :street_direction, :street_name, :street_type)
+      params.require(:spot).permit(:address_number, :street_direction, :street_name)
     end
 
 end

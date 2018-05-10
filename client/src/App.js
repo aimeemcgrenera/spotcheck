@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ZoneSearch from './ZoneSearch';
 // import ZoneList from './ZoneList';
-import SpotForm from './SpotForm';
+import SpotNew from './SpotNew';
 
 class App extends Component {
 

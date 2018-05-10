@@ -1,6 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {addSpot} from '../actions';
 
-class SpotForm extends React.Component {
+class SpotNew extends React.Component {
 
   constructor(props) {
     super(props);
@@ -57,4 +59,4 @@ class SpotForm extends React.Component {
     }
 }
 
-export default SpotForm;
+export default SpotNew;
