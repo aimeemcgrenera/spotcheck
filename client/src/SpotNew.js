@@ -10,6 +10,7 @@ class SpotNew extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+
   handleSubmit(event){
     event.preventDefault();
 
@@ -19,17 +20,17 @@ class SpotNew extends React.Component {
 
     let body = JSON.stringify({spot: {number: number, direction: direction, street: street}})
 
-    fetch(`api/spot`, {
+    fetch('/api/spot', {
       method: 'POST',
       body: body,
       }).then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
-        }
+  }
 
   render(){
     return(
-      <div id='spot-form'>
+      <div id='SpotNew'>
       <h2>Enter your Parking Spot Address:</h2>
         <form onSubmit={this.handleSubmit} >
           <p><input
