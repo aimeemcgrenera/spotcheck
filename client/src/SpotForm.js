@@ -8,44 +8,38 @@ class SpotForm extends React.Component {
     var number = document.getElementById('number').value;
     var direction = document.getElementById('direction').value;
     var street = document.getElementById('street').value;
-    var type = document.getElementById('type').value;
 
     fetch(`api/spot`, {
       method: 'POST',
       headers: new Headers(),
-      body: JSON.stringify({address_number:number, street_direction:direction, street_name:street, street_type:type})
+      body: JSON.stringify({address_number:number, street_direction:direction, street_name:street})
       }).then((res) => res.json())
         .then((data) => console.log(data))
         .catch((err) => console.log(err))
-
     }
 
   render(){
 
     return(
       <div id='spot-form'>
+      <h2>Enter your Parking Spot Address:</h2>
         <form onSubmit={this.handleSubmit} >
-          <input
+          <p><input
             type="text"
             id="number"
             placeholder="Enter Address Number"
-          />
-          <input
+          /></p>
+          <p><input
             type="text"
             id="direction"
             placeholder="Enter Street Direction"
-          />
-          <input
+          /></p>
+          <p><input
             type="text"
             id="street"
             placeholder="Enter Street Name"
-          />
-          <input
-            type="text"
-            id="type"
-            placeholder="Enter Street Type"
-          />
-          <button onClick={this.handleClick}>Submit</button>
+          /></p>
+          <p><button onClick={this.handleClick}>Submit</button></p>
 
           </form>
 
