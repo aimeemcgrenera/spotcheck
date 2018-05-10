@@ -1,6 +1,4 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {addSpot} from '../actions';
 
 class SpotNew extends React.Component {
 
@@ -24,8 +22,10 @@ class SpotNew extends React.Component {
     fetch(`api/spot`, {
       method: 'POST',
       body: body,
-      }).then((response) => {return response.json()})
-    }
+      }).then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+        }
 
   render(){
     return(
