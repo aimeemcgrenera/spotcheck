@@ -5,7 +5,9 @@ class SpotNew extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      spots: []
+      number: '',
+      direction: '',
+      street: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -18,8 +20,8 @@ class SpotNew extends React.Component {
     var direction = document.getElementById('direction').value;
     var street = document.getElementById('street').value;
 
-    let body = JSON.stringify({spot: {number: number, direction: direction, street: street}})
-
+    let body = JSON.stringify({number: number, direction: direction, street: street})
+    debugger
     fetch('/api/spot', {
       method: 'POST',
       body: body,
