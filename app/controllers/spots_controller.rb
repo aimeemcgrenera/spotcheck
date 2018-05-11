@@ -1,3 +1,5 @@
+require 'pry'
+
 class SpotsController < ApplicationController
 
   def index
