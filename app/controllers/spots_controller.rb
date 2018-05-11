@@ -1,6 +1,5 @@
-require 'pry'
-
 class SpotsController < ApplicationController
+  before_action :set_spot, only: [:show, :edit, :update, :destroy]
 
   def index
     @spots = Spot.all
@@ -9,6 +8,10 @@ class SpotsController < ApplicationController
 
   def show
     render json: @spot
+  end
+
+  def new
+    @spot = Spot.new
   end
 
   def create
@@ -29,6 +32,10 @@ class SpotsController < ApplicationController
   end
 
   private
+
+    def set_spot
+      @spot = Spot.find(params[:id])
+    end
 
     def spot_params
       params.require(:spot).permit(:address_number, :street_direction, :street_name)

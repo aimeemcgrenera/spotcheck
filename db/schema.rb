@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422182953) do
+ActiveRecord::Schema.define(version: 20180511145356) do
 
   create_table "spots", force: :cascade do |t|
     t.integer "address_number"
     t.string "number_type"
-    t.integer "street_direction"
+    t.string "street_direction"
     t.string "street_name"
     t.string "street_type"
     t.datetime "created_at", null: false

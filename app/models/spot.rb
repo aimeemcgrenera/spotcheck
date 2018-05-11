@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  validates :address_number, :street_name, presence: true
+  validates_presence_of :address_number, :street_name
   validates :street_direction, inclusion: { in: %w(N S E W),
     message: "%{value} is not a valid direction, please enter N S E or W" }
   before_save :uppercase
