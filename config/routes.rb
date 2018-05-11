@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   scope '/api' do
     get :zone, to: 'zones#index'
-    get :spot, to: 'spots#create'
+    post :spot, to: 'spots#create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
