@@ -16,19 +16,20 @@ class SpotNew extends React.Component {
   handleSubmit(event){
     event.preventDefault();
 
-    var number = document.getElementById('number').value;
-    var direction = document.getElementById('direction').value;
-    var street = document.getElementById('street').value;
+    let number = document.getElementById('number').value;
+    let direction = document.getElementById('direction').value;
+    let street = document.getElementById('street').value;
+    let body = JSON.stringify({number: number, direction: direction, street: street});
 
-    let body = JSON.stringify({number: number, direction: direction, street: street})
-    debugger
     fetch('/api/spot', {
       method: 'POST',
+      accept: 'application/json',
       body: body,
-      }).then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
+    }).then((res) => res.json())
+    .then((data) => alert('Data Sent'))
+    .catch((err) => console.log(err))
   }
+
 
   render(){
     return(
