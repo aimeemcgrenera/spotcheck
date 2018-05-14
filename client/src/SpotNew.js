@@ -1,5 +1,5 @@
 import React from 'react';
-import Client from './Client';
+import ZoneSearch from './ZoneSearch';
 
 class SpotNew extends React.Component {
 
@@ -30,7 +30,7 @@ class SpotNew extends React.Component {
         },
         body: body,
       }).then((res) => res.json())
-      .then((data) => Client.search(data.odd_even, data.street_direction, data.street_name))
+      .then((data) => ZoneSearch(data.odd_even, data.street_direction, data.street_name))
       .catch((err) => console.log(err))
 
     }

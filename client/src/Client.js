@@ -6,7 +6,7 @@ function search(odd_even, direction, street) {
     accept: 'application/json',
   }).then(results => parseJSON(results))
     .then((data) => {
-      console.log('Check this JSON!', data);
+      return data;
     }).catch(err => {throw err})
 }
 

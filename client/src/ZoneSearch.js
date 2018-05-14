@@ -1,72 +1,22 @@
+import fetch from 'isomorphic-fetch';
 import React from 'react';
-import Client from './Client';
 
-class ZoneSearch extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      even_odd: '',
-      direction: '',
-      street: '',
-      type: '',
-      zones: []
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+export default function ZoneSearch(odd_even, direction, street) {
+  fetch(`api/zone?odd_even=${odd_even}&street_direction=${direction}&street_name=${street}`, {
+    method: 'GET',
+    accept: 'application/json',
+  }).then(results => parseJSON(results))
+    .then((data) => {
+      console.log(data);
+    }).catch(err => {throw err})
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    event.preventDefault()
-
-    var even_odd = document.getElementById('number').value;
-    var direction = document.getElementById('direction').value;
-    var street = document.getElementById('street').value;
-    var type = document.getElementById('type').value;
-
-    this.setState({
-      even_odd: even_odd,
-      direction: direction,
-      street: street,
-      type: type,
-    });
-
-    Client.search(even_odd, direction, street, type)
-  }
-
-render(){
   return(
-    <div id='zone-search'>
-      <form onSubmit={this.handleSubmit} >
-        <input
-          type="text"
-          id="number"
-          placeholder="Enter Address Number"
-        />
-        <input
-          type="text"
-          id="direction"
-          placeholder="Enter Street Direction"
-        />
-        <input
-          type="text"
-          id="street"
-          placeholder="Enter Street Name"
-        />
-        <input
-          type="text"
-          id="type"
-          placeholder="Enter Street Type"
-        />
-        <button onClick={this.handleClick}>Submit</button>
-        </form>
+    <div>
 
-        </div>
-      )
-  }
+    </div>
+  )
 }
 
-export default ZoneSearch;
+function parseJSON(response) {
+  return response.json();
+}
