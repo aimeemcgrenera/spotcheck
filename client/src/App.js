@@ -13,8 +13,7 @@ class App extends Component {
 
           <SpotNew
           />
-          <ZoneSearch
-          />
+
 
         </div>
       </div>

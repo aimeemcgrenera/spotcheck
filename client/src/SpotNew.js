@@ -8,7 +8,8 @@ class SpotNew extends React.Component {
     this.state = {
       number: '',
       direction: '',
-      street: ''
+      street: '',
+      zones: []
     };
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -30,9 +31,18 @@ class SpotNew extends React.Component {
         },
         body: body,
       }).then((res) => res.json())
-      .then((data) => ZoneSearch(data.odd_even, data.street_direction, data.street_name))
-      .catch((err) => console.log(err))
+      .then((data) => ZoneSearch.search(data.odd_even, data.street_direction, data.street_name))
+      .then(function(data) {
+        let zones = data.map((zone) => {
+          return(
+            <div key={zone.results}>
+            </div>
+          )
+        this.setState({zones: zones})
+        })
 
+      })
+      .catch((err) => console.log(err))
     }
 
   render(){
@@ -61,7 +71,7 @@ class SpotNew extends React.Component {
           <p><button>Submit</button></p>
 
           </form>
-          {this.state.spots}
+          {this.state.zones}
           </div>
         )
     }
