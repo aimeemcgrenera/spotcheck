@@ -1,7 +1,7 @@
 
 class Spot < ApplicationRecord
   validates_presence_of :address_number, :street_name
-  validates :street_direction, inclusion: { in: %w(N S E W),
+  validates :street_direction, inclusion: { in: %w(N S E W n s e w),
     message: "%{value} is not a valid direction, please enter N S E or W" }
   before_save :uppercase, :assign_parity
 
@@ -9,6 +9,7 @@ class Spot < ApplicationRecord
 
     def uppercase
       self.street_name.upcase!
+      self.street_direction.upcase!
     end
 
     def assign_parity
