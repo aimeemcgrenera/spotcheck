@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch';
 
-function search(odd_even, direction, street, type) {
-  return fetch(`api/zone?odd_even=${odd_even}&street_direction=${direction}&street_name=${street}&street_type=${type}`, {
+function search(odd_even, direction, street) {
+  return fetch(`api/zone?odd_even=${odd_even}&street_direction=${direction}&street_name=${street}`, {
     method: 'GET',
     accept: 'application/json',
   }).then(results => parseJSON(results))
