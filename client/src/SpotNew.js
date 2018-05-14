@@ -33,14 +33,8 @@ class SpotNew extends React.Component {
       }).then((res) => res.json())
       .then((data) => ZoneSearch.search(data.odd_even, data.street_direction, data.street_name))
       .then(function(data) {
-        let zones = data.map((zone) => {
-          return(
-            <div key={zone.results}>
-            </div>
-          )
+        let zones = data
         this.setState({zones: zones})
-        })
-
       })
       .catch((err) => console.log(err))
     }

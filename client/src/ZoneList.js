@@ -1,16 +1,16 @@
 // import React from 'react';
-// import Client from './Client';
+// import ZoneSearch from './ZoneSearch';
 //
 // export default function ZoneList() {
-//   const zones = Client.data;
+//   const zones = ZoneSearch;
 //   debugger
-//   const zoneRows = zones.map((zone, id) => (
-//       <td>{zone.street_name}</td>
-//     ))
+//   // const zoneRows = zones.map((zone, id) => (
+//   //     <td>{zone.street_name}</td>
+//   //   ))
 //
 //   return(
 //     <div>
-//       {zoneRows}
+//
 //     </div>
 //   )
 // }
