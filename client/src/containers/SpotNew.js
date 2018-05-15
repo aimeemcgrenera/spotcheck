@@ -1,6 +1,6 @@
 import React from 'react';
-import ZoneSearch from './ZoneSearch';
-import ZoneList from './ZoneList';
+import ZoneSearch from '../components/ZoneSearch';
+import ZoneList from '../components/ZoneList';
 
 class SpotNew extends React.Component {
 
@@ -93,7 +93,6 @@ class SpotNew extends React.Component {
           /></p>
           <p><button>Submit</button></p>
           </form>
-          <h3>ZONES:</h3>
           <ZoneList zones={this.state.zones}/>
           </div>
         )
