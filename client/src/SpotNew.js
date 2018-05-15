@@ -12,13 +12,9 @@ class SpotNew extends React.Component {
       street: '',
       zones: []
     };
-
-    this.handleNumberChange = this.handleNumberChange.bind(this)
-    this.handleDirectionChange = this.handleDirectionChange.bind(this)
-    this.handleStreetChange = this.handleStreetChange.bind(this)
   }
 
-  handleNumberChange(event){
+  handleNumberChange = event => {
     event.preventDefault();
 
     this.setState({
@@ -26,7 +22,7 @@ class SpotNew extends React.Component {
     })
   }
 
-  handleDirectionChange(event){
+  handleDirectionChange = event => {
     event.preventDefault();
 
     this.setState({
@@ -34,7 +30,7 @@ class SpotNew extends React.Component {
     })
   }
 
-  handleStreetChange(event){
+  handleStreetChange = event => {
     event.preventDefault();
 
     this.setState({
@@ -64,7 +60,6 @@ class SpotNew extends React.Component {
         this.setState({
           zones: data
         })
-
         console.log(this.state)
       })
       .catch((err) => console.log(err))
@@ -98,6 +93,7 @@ class SpotNew extends React.Component {
           /></p>
           <p><button>Submit</button></p>
           </form>
+          <h3>ZONES:</h3>
           <ZoneList zones={this.state.zones}/>
           </div>
         )
