@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import ZoneList from './ZoneList';
+import ZoneList from './ZoneList';
 import SpotNew from './SpotNew';
 import ZoneSearch from './ZoneSearch';
 
@@ -13,8 +13,6 @@ class App extends Component {
 
           <SpotNew
           />
-
-
         </div>
       </div>
     );

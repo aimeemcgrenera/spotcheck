@@ -1,5 +1,6 @@
 import React from 'react';
 import ZoneSearch from './ZoneSearch';
+import ZoneList from './ZoneList';
 
 class SpotNew extends React.Component {
 
@@ -11,7 +12,7 @@ class SpotNew extends React.Component {
       street: '',
       zones: []
     };
-    this.handleSubmit = this.handleSubmit.bind(this)
+
     this.handleNumberChange = this.handleNumberChange.bind(this)
     this.handleDirectionChange = this.handleDirectionChange.bind(this)
     this.handleStreetChange = this.handleStreetChange.bind(this)
@@ -42,7 +43,7 @@ class SpotNew extends React.Component {
   }
 
 
-  handleSubmit(event){
+  handleSubmit = event => {
     event.preventDefault();
 
     let number = document.getElementById('number').value;
@@ -60,8 +61,11 @@ class SpotNew extends React.Component {
       }).then((res) => res.json())
       .then((data) => ZoneSearch.search(data.odd_even, data.street_direction, data.street_name))
       .then(data => {
-        this.state.zones.push(data);
-        console.log(data)
+        this.setState({
+          zones: data
+        })
+
+        console.log(this.state)
       })
       .catch((err) => console.log(err))
     }
@@ -93,11 +97,8 @@ class SpotNew extends React.Component {
             placeholder="Enter Street Name"
           /></p>
           <p><button>Submit</button></p>
-
           </form>
-          <h3>Zones:</h3>
-          <p>{this.state.zones}</p>
-
+          <ZoneList zones={this.state.zones}/>
           </div>
         )
     }

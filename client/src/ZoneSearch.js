@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-fetch';
+import SpotNew from './SpotNew';
 
 function search(odd_even, direction, street) {
   return fetch(`api/zone?odd_even=${odd_even}&street_direction=${direction}&street_name=${street}`, {
