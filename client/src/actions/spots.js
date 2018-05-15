@@ -1,15 +1,13 @@
-const setSpots = spots => {
-  return {
-    type: 'FETCH_SPOTS',
-    spots,
-  }
-}
-
 export const fetchSpots = () => {
   return dispatch => {
-    return fetch('/api/spot')
+    return fetch('/api/spot', {
+      method: 'GET',
+      accept: 'application/json'
+    })
       .then(response => response.json())
-      .then(spots => dispatch(setSpots(spots)))
+      .then((spots) => {
+        return spots;
+      })
       .catch(error => console.log(error));
   }
 }

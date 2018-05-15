@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SpotsList = (props) => {
-
-  const renderSpots = props.spots.map(spot =>
+debugger
+  const renderSpots = spots.map(spot =>
     <div key={spot.id}>
       <div className="SpotList">
         <p>{spot.address_number}</p>

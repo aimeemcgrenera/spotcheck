@@ -1,20 +1,37 @@
-import React, { Component } from 'react';
+import React, from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchSpots } from '../actions/spots';
 import SpotsList from '../components/SpotsList';
 
-class SpotsPage extends Component {
+class SpotsPage extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      spots: []
+    };
+  }
 
   componentDidMount() {
-    this.props.fetchSpots()
+    fetch('/api/spot', {
+      method: 'GET',
+      accept: 'application/json'
+    })
+      .then(response => response.json())
+      .then((spots) => {
+        this.setState({
+          spots: spots
+        })
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
-    const spots = this.props;
+
     return (
       <div className="SpotsContainer">
-        <SpotsList spots={spots} />
+        <SpotsList spots={this.state.spots} />
       </div>
     );
   }
