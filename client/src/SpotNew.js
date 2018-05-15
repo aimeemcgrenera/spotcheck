@@ -12,6 +12,33 @@ class SpotNew extends React.Component {
       zones: []
     };
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleNumberChange = this.handleNumberChange.bind(this)
+    this.handleDirectionChange = this.handleDirectionChange.bind(this)
+    this.handleStreetChange = this.handleStreetChange.bind(this)
+  }
+
+  handleNumberChange(event){
+    event.preventDefault();
+
+    this.setState({
+      number: event.target.value
+    })
+  }
+
+  handleDirectionChange(event){
+    event.preventDefault();
+
+    this.setState({
+      direction: event.target.value
+    })
+  }
+
+  handleStreetChange(event){
+    event.preventDefault();
+
+    this.setState({
+      street: event.target.value
+    })
   }
 
 
@@ -32,9 +59,9 @@ class SpotNew extends React.Component {
         body: body,
       }).then((res) => res.json())
       .then((data) => ZoneSearch.search(data.odd_even, data.street_direction, data.street_name))
-      .then(function(data) {
-        let zones = data
-        this.setState({zones: zones})
+      .then(data => {
+        this.state.zones.push(data);
+        console.log(data)
       })
       .catch((err) => console.log(err))
     }
@@ -48,24 +75,29 @@ class SpotNew extends React.Component {
             type="text"
             id="number"
             name="number"
+            onChange={this.handleNumberChange}
             placeholder="Enter Address Number"
           /></p>
           <p><input
             type="text"
             id="direction"
             name="direction"
+            onChange={this.handleDirectionChange}
             placeholder="Enter Street Direction"
           /></p>
           <p><input
             type="text"
             id="street"
             name="street"
+            onChange={this.handleStreetChange}
             placeholder="Enter Street Name"
           /></p>
           <p><button>Submit</button></p>
 
           </form>
-          {this.state.zones}
+          <h3>Zones:</h3>
+          <p>{this.state.zones}</p>
+
           </div>
         )
     }
