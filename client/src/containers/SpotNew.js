@@ -91,7 +91,7 @@ class SpotNew extends React.Component {
             onChange={this.handleStreetChange}
             placeholder="Enter Street Name"
           /></p>
-          <p><button>Submit</button></p>
+          <p><button class="btn btn-outline-success">Submit</button></p>
           </form>
           <h3>Zones:</h3>
           <ZoneList zones={this.state.zones}/>

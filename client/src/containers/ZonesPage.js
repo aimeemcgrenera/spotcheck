@@ -1,23 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
 import { fetchZones } from '../actions/zones';
 import ZoneList from '../components/ZoneList';
 import { bindActionCreators } from 'redux'
 
-class ZonesPage extends React.Component {
+class ZonesPage extends Component {
 
   componentDidMount(){
-    this.props.fetchZones()
+    if(this.props.zones.length === 0) {
+     this.props.zones.fetchZones()
+   }
   }
 
 
   render() {
     const zones = this.props.zones
-
     return (
       <div className="ZonesContainer">
-
+      
       </div>
     );
   }
