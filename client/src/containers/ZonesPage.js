@@ -17,7 +17,7 @@ class ZonesPage extends Component {
     const zones = this.props.zones
     return (
       <div className="ZonesContainer">
-      
+
       </div>
     );
   }

@@ -67,7 +67,7 @@ class SpotNew extends React.Component {
 
   render(){
     return(
-      <div id='SpotNew'>
+      <div id='SpotNew' align="center">
       <h2>Enter your Parking Spot Address:</h2>
         <form onSubmit={this.handleSubmit} >
           <p><input

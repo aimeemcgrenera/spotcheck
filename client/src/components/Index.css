@@ -1,0 +1,20 @@
+.HomePage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%
+}
+
+.Map {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%
+}
+
+.ZoneList {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%
+}

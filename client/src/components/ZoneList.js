@@ -1,6 +1,7 @@
 import React from 'react';
 import ZoneSearch from './ZoneSearch';
 import SpotNew from '../containers/SpotNew';
+import './Index.css';
 
 function ZoneList(props) {
   const zones = props.zones.map((zone) =>

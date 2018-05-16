@@ -4,13 +4,6 @@ import React from 'react';
 
 const NavBar = () => {
   return (
-    // <div className="NavBar">
-    //   <NavLink  className="NavLink" to="/">Home</NavLink>
-    //   <NavLink  className="NavLink" to="/spotnew">Check Spot</NavLink>
-    //   <NavLink  className="NavLink" to="/zones">All Zones</NavLink>
-    //   <NavLink  className="NavLink" to="/map">Map</NavLink>
-    // </div>
-
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="true" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -31,7 +24,6 @@ const NavBar = () => {
         <a class="nav-link" href="/map">Map</a>
       </li>
     </ul>
-
   </div>
 </nav>
 
