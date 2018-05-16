@@ -1,9 +1,9 @@
-export default function zonessReducer(state= {zones: []}, action) {
+export default function zonessReducer(state= {loading: false, zones: []}, action) {
   switch ( action.type ){
     case 'LOADING_ZONES':
-      return action.zones;
+      return Object.assign({}, state,{loading: true})
     case 'FETCH_ZONES':
-      return action.zones
+      return {loading: false, zones: action.zones}
     default:
       return state;
   }

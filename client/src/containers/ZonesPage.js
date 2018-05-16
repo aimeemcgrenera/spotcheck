@@ -17,7 +17,7 @@ class ZonesPage extends React.Component {
 
     return (
       <div className="ZonesContainer">
-      <ZoneList zones={zones} />
+
       </div>
     );
   }
