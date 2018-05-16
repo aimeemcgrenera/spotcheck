@@ -8,7 +8,7 @@ class ZonesPage extends Component {
 
   componentDidMount(){
     if(this.props.zones.length === 0) {
-     this.props.zones.fetchZones()
+     this.props.fetchZones()
    }
   }
 
@@ -16,21 +16,21 @@ class ZonesPage extends Component {
   render() {
     const zones = this.props.zones
     return (
-      <div className="ZonesContainer">
-
+      <div className="ZonesContainer" align="center">
+      <ZoneList zones={zones} />
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return {zones: state.zones}
+  return {zones: state.zones.zones}
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    fetchZones: fetchZones
-  }, dispatch);
-}
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//     fetchZones: fetchZones
+//   }, dispatch);
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ZonesPage);
+export default connect(mapStateToProps, {fetchZones})(ZonesPage);

@@ -6,9 +6,9 @@ import './Index.css';
 function ZoneList(props) {
   const zones = props.zones.map((zone) =>
     <div key={zone.id}>
-      <p>Zone number: {zone.zone}</p>
-      <p>Number Range: {zone.address_range_low}  -  {zone.address_range_high}</p>
-      <p>Street: {zone.street_direction} {zone.street_name}</p>
+      <p class="text-danger">Zone number: {zone.zone}</p>
+      <h6>Number Range: {zone.address_range_low}  -  {zone.address_range_high}</h6>
+      <h6>Street: {zone.street_direction} {zone.street_name}</h6>
       -----------------------------------------
     </div>
   );
