@@ -63,13 +63,15 @@ class SpotNew extends React.Component {
         console.log(this.state)
       })
       .catch((err) => console.log(err))
+
+      document.getElementById("spotform").reset();
     }
 
   render(){
     return(
       <div id='SpotNew' align="center">
       <h2>Enter your Parking Spot Address:</h2>
-        <form onSubmit={this.handleSubmit} >
+        <form onSubmit={this.handleSubmit} id="spotform">
           <p><input
             type="text"
             id="number"

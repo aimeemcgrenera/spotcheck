@@ -11,7 +11,7 @@ class ZonesController < ApplicationController
   end
 
   def all_zones
-    return render json: Zone.getAllData
+    render json: Zone.getAllData
   end
 
 end
