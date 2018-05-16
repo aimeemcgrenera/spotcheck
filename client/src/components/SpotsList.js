@@ -3,7 +3,7 @@ import React from 'react';
 const SpotsList = ({spots}) => {
 
   function listSpots() {
-    return spots.map(spot => {
+    return spots.spots.map(spot => {
       return(
         <div key={spot.id}>
           <div className="SpotList">
