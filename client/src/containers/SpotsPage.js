@@ -9,7 +9,7 @@ class SpotsPage extends React.Component {
 
   componentDidMount() {
     if (this.props.spots.length === 0){
-      this.props.actions.fetchSpots()
+      this.props.fetchSpots()
     }
   }
 
@@ -24,13 +24,14 @@ class SpotsPage extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  console.log('in map state to props')
+const mapStateToProps = (state) => {
   return {spots: state.spots}
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return { actions: bindActionCreators(actions, dispatch) }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchSpots: fetchSpots
+  }, dispatch);
+}
 
-export default connect(mapStateToProps, {fetchSpots})(SpotsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(SpotsPage);

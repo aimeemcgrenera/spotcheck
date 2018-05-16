@@ -93,6 +93,7 @@ class SpotNew extends React.Component {
           /></p>
           <p><button>Submit</button></p>
           </form>
+          <h3>Zones:</h3>
           <ZoneList zones={this.state.zones}/>
           </div>
         )

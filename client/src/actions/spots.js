@@ -1,15 +1,13 @@
 import fetch from 'isomorphic-fetch';
 
-export function fetchSpots() {
+export function fetchSpots(dispatch) {
   return function(dispatch){
     dispatch({type: 'LOADING_SPOTS'})
-    return fetch('/api/spot', {
-      method: 'GET',
-      accept: 'application/json'
-    }).then(res => {
+    return fetch('/api/spot')
+    .then(res => {
       return res.json()
     }).then(responseJSON => {
-      dispatch({type: 'FETCH_SPOTS', payload: responseJSON.spots})
+      return dispatch({type: 'FETCH_SPOTS', spots: responseJSON})
     }).catch(error => console.log(error));
   }
 }

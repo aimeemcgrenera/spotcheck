@@ -7,25 +7,29 @@ import { bindActionCreators } from 'redux'
 
 class ZonesPage extends React.Component {
 
+  componentDidMount() {
+    this.props.fetchZones()
+  }
+
 
   render() {
     const zones = this.props.zones
-    debugger
     return (
       <div className="ZonesContainer">
-        <Zones zones={zones} />
+        <ZoneList zones = {zones} />
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  console.log('in map state to props')
+const mapStateToProps = (state) => {
   return {zones: state.zones}
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return { actions: bindActionCreators(actions, dispatch) }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchZones: fetchZones
+  }, dispatch);
+}
 
-export default connect(mapStateToProps, {fetchZones})(ZonesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ZonesPage);

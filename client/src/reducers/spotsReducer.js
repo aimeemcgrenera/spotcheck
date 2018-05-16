@@ -1,9 +1,9 @@
-export default function spotsReducer(state= {loading: false, spots: []}, action) {
+export default function spotsReducer(state= {spots: []}, action) {
   switch ( action.type ){
     case 'LOADING_SPOTS':
-      return Object.assign({}, state,{loading: true})
+      return action.spots;
     case 'FETCH_SPOTS':
-      return {loading: false, spots: action.payload}
+      return action.spots
     default:
       return state;
   }
