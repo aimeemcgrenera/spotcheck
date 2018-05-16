@@ -3,44 +3,34 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchSpots } from '../actions/spots';
 import SpotsList from '../components/SpotsList';
+import { bindActionCreators } from 'redux'
+import * as actions from '../actions/spots.js'
 
 class SpotsPage extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      spots: []
-    };
+  componentDidMount() {
+    if (this.props.spots.length === 0){
+      this.props.actions.fetchSpots()
+    }
   }
 
-  componentDidMount() {
-    fetch('/api/spot', {
-      method: 'GET',
-      accept: 'application/json'
-    })
-      .then(response => response.json())
-      .then((spots) => {
-        this.setState({
-          spots: spots
-        })
-      })
-      .catch(error => console.log(error));
-  }
 
   render() {
-
     return (
       <div className="SpotsContainer">
-        <SpotsList spots={this.state.spots} />
+        <SpotsList spots={this.props.spots} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    spots: state.spots
-  };
+function mapStateToProps(state) {
+  console.log('in map state to props')
+  return {spots: state.spots}
 }
 
-export default connect(mapStateToProps, { fetchSpots })(SpotsPage);
+function mapDispatchToProps(dispatch) {
+  return { actions: bindActionCreators(actions, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
