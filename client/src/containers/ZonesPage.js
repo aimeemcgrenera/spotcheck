@@ -7,16 +7,17 @@ import { bindActionCreators } from 'redux'
 
 class ZonesPage extends React.Component {
 
-  componentDidMount() {
+  componentDidMount(){
     this.props.fetchZones()
   }
 
 
   render() {
     const zones = this.props.zones
+
     return (
       <div className="ZonesContainer">
-        <ZoneList zones = {zones} />
+      <ZoneList zones={zones} />
       </div>
     );
   }
