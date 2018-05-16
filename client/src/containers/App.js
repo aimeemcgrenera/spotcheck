@@ -8,6 +8,7 @@ import SpotsPage from './SpotsPage';
 import Zones from '../components/Zones';
 import SpotNew from './SpotNew';
 import ZoneSearch from '../components/ZoneSearch';
+import Map from '../components/Map';
 
 class App extends Component {
 
@@ -21,6 +22,7 @@ class App extends Component {
         <Route path="/spotnew" component={SpotNew}/>
         <Route path="/spots" component={SpotsPage}/>
         <Route path="/zones" component={Zones}/>
+        <Route path="/map" component={Map}/>
 
           </div>
         </Router>
