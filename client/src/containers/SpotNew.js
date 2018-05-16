@@ -57,10 +57,12 @@ class SpotNew extends React.Component {
       }).then((res) => res.json())
       .then((data) => ZoneSearch.search(data.odd_even, data.street_direction, data.street_name))
       .then(data => {
+        if (data.length === 0) {
+          alert("No Zone in Area")
+        } else {
         this.setState({
           zones: data
-        })
-        console.log(this.state)
+        })}
       })
       .catch((err) => console.log(err))
 
