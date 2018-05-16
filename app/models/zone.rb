@@ -9,4 +9,11 @@ class Zone < ActiveRecord::Base
     body_hash = JSON.parse(resp.body)
     # @address_high = body_hash[0]["address_range_high"]
   end
+
+  def self.getAllData
+    resp = Faraday.get 'https://data.cityofchicago.org/resource/ys7w-i4tk.json' do |req|
+      req.params['status'] = "ACTIVE"
+    end
+    body_hash = JSON.parse(resp.body)
+  end
 end

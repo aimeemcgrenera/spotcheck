@@ -9,4 +9,9 @@ class ZonesController < ApplicationController
     render :json => results
 
   end
+
+  def all_zones
+    render json: Zone.getAllData
+  end
+
 end
