@@ -9,13 +9,7 @@ class Zones extends React.Component {
     };
   }
 
-  fetch(fetchZones().then(data => {
-    this.setState({
-      zones: data
-    })
-  )
-
-  render() {}
+  render() {
     return (
       <div className="Zones">
         <h2>All Zones:</h2>
