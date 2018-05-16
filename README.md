@@ -8,7 +8,6 @@ SpotCheck is a React application with a Rails API backend that was created to he
 * `cd spotcheck` to change directory and access the application
 * `bundle install` to install the required gems
 * `rake db:migrate` to migrate the database
-* `bundle install` to install all the required gems
 * `cd client` to move over to the client side of the application
 * `npm install` to install dependencies
 * `rake start` will start both the client and server side and run the application on your local server
