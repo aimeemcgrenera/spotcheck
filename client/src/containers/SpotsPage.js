@@ -1,10 +1,9 @@
-import React, from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { fetchSpots } from '../actions/spots';
 import SpotsList from '../components/SpotsList';
 import { bindActionCreators } from 'redux'
-import * as actions from '../actions/spots.js'
 
 class SpotsPage extends React.Component {
 
@@ -16,9 +15,10 @@ class SpotsPage extends React.Component {
 
 
   render() {
+    const spots = this.props.spots
     return (
       <div className="SpotsContainer">
-        <SpotsList spots={this.props.spots} />
+        <SpotsList spots={spots} />
       </div>
     );
   }
@@ -29,8 +29,8 @@ function mapStateToProps(state) {
   return {spots: state.spots}
 }
 
-function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actions, dispatch) }
-}
+// function mapDispatchToProps(dispatch) {
+//   return { actions: bindActionCreators(actions, dispatch) }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {fetchSpots})(SpotsPage);
