@@ -19,4 +19,5 @@ class Spot < ApplicationRecord
     def numberRange(address_number)
     address_number >= Zone.address_range_low && address_number <= Zone.address_range_high ? "Permit Zone" : "Not a Permit Zone"
     end
+
 end

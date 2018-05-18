@@ -8,6 +8,7 @@ import ZonesPage from './ZonesPage';
 import SpotNew from './SpotNew';
 import ZoneSearch from '../components/ZoneSearch';
 import Map from '../components/Map';
+import SpotsPage from './SpotsPage'
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
         <Route exact path="/" component={Home}/>
         <Route path="/spotnew" component={SpotNew}/>
         <Route path="/zones" component={ZonesPage}/>
+        <Route path="/spots" component={SpotsPage}/>
         <Route path="/map" component={Map}/>
 
           </div>

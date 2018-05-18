@@ -21,6 +21,9 @@ const NavBar = () => {
         <Link class="nav-link" to="/zones">All Zones</Link>
       </li>
       <li class="nav-item">
+        <Link class="nav-link" to="/spots">Previous Spots</Link>
+      </li>
+      <li class="nav-item">
         <Link class="nav-link" to="/map">Map</Link>
       </li>
     </ul>

@@ -1,24 +1,16 @@
 import React from 'react';
 
-const SpotsList = ({spots}) => {
-
-  function listSpots() {
-    return spots.spots.map(spot => {
-      return(
+function SpotsList(props) {
+    const spots = props.spots.map((spot) =>
         <div key={spot.id}>
-          <div className="SpotList">
-            <h3>Previous Spots Entered:</h3>
-            <p>{spot.address_number}</p>
-            <p>{spot.street_direction}</p>. {spot.street_name}
-          </div>
+            <h6>{spot.address_number} {spot.street_direction}. {spot.street_name}</h6>
+            -----------------------------------------
         </div>
       )
-    })
-  }
 
   return (
     <div>
-      {listSpots()}
+      {spots}
     </div>
   );
 };

@@ -17,6 +17,8 @@ class ZonesPage extends Component {
 
     return (
       <div className="ZonesContainer" align="center">
+      <br />
+      <h3><strong>All Zones: </strong></h3><br/>
       <ZoneList zones={zones} />
       </div>
     );
@@ -26,11 +28,5 @@ class ZonesPage extends Component {
 const mapStateToProps = (state) => {
   return {zones: state.zones.zones}
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return bindActionCreators({
-//     fetchZones: fetchZones
-//   }, dispatch);
-// }
 
 export default connect(mapStateToProps, {fetchZones})(ZonesPage);
