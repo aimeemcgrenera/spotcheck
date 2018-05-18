@@ -12,9 +12,9 @@ class ZonesPage extends Component {
    }
   }
 
-
   render() {
     const zones = this.props.zones
+
     return (
       <div className="ZonesContainer" align="center">
       <ZoneList zones={zones} />
